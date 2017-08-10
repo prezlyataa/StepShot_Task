@@ -1,0 +1,65 @@
+.container {
+    max-width: 1024px;  margin: 0 auto;
+}
+.header h2 {
+    text-align: center;
+}
+
+/*    Gallery   */
+
+#gallery {
+    float: left; width: 50%; min-height: 12em;
+}
+.gallery.custom-state-active {
+    background: #eee;
+}
+.gallery li {
+    float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center;
+}
+.gallery li h5 {
+    margin: 0 0 0.4em; cursor: move;
+}
+.gallery li a {
+    float: right;
+}
+.gallery li a.ui-icon-zoomin {
+    float: left;
+}
+.gallery li img {
+    width: 100%; cursor: move;
+}
+
+/*   Trash   */
+
+#trash {
+    float: right; width: 45%; min-height: 18em; padding: 1%;
+}
+#trash h3 {
+    line-height: 16px; margin: 0 0 0.4em; text-align: center;
+}
+#trash h3 .ui-icon {
+    float: left;
+}
+#trash ul {
+    overflow: hidden;
+}
+#trash .gallery h5 {
+    display: block; float: left;
+}
+
+
+.gallery li a {
+    float: none;
+}
+
+#gallery .buy .ui-icon {
+    background-image: none;
+    text-indent: inherit;
+    overflow: initial;
+    float: none;
+    position: static;
+    margin-right: 10px;
+    text-decoration: none;
+    padding: 5px;
+}
+
