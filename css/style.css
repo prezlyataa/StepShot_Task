@@ -4,6 +4,9 @@
 .header h2 {
     text-align: center;
 }
+.ui-widget {
+    overflow: hidden;
+}
 
 /*    Gallery   */
 
@@ -14,7 +17,7 @@
     background: #eee;
 }
 .gallery li {
-    float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center;
+    float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; list-style: none;
 }
 .gallery li h5 {
     margin: 0 0 0.4em; cursor: move;
@@ -32,7 +35,7 @@
 /*   Trash   */
 
 #trash {
-    float: right; width: 45%; min-height: 18em; padding: 1%;
+    float: right; width: 40%; min-height: 18em; padding: 1%; background-color: #F6F6F6;
 }
 #trash h3 {
     line-height: 16px; margin: 0 0 0.4em; text-align: center;
@@ -46,10 +49,18 @@
 #trash .gallery h5 {
     display: block; float: left;
 }
-
+#trash li a {
+    margin-left: 0;
+}
 
 .gallery li a {
     float: none;
+    text-decoration: none;
+    display: block;
+    text-indent: inherit;
+    background-image: none;
+    overflow: inherit;
+    margin-top: 10px;
 }
 
 #gallery .buy .ui-icon {
@@ -58,8 +69,13 @@
     overflow: initial;
     float: none;
     position: static;
-    margin-right: 10px;
     text-decoration: none;
     padding: 5px;
 }
 
+#next {
+    display: block;
+    margin-top: 15px;
+    padding: 5px 15px;
+    margin-left: 60px;
+}

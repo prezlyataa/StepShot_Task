@@ -1,29 +1,3 @@
-/*
-jQuery(document).ready(function($){
-    var cList = $('ul#gallery');
-    $.each(function(i)
-    {
-        var li = $('<li/>')
-            .addClass('buy ui-widget-content ui-corner-tr')
-            .appendTo(cList);
-        var imgg = $('<img/>')
-            .src('http://pokeapi.co/media/img/1.png')
-            .appentTo(li);
-        var hh5 = $('<h5/>')
-            .addClass('ui-widget-header')
-            .text('Pokemon name')
-            .appendto(li);
-        var aaa = $('<a/>')
-            .addClass('ui-icon ui-icon-trash')
-            .href('link/to/trash/script/when/we/have/js/off')
-            .text('Buy')
-            .appendTo(li);
-    });
-});
-*/
-
-////////////////////////////////////////
-
 $( function() {
 
     // There's the gallery and the trash
@@ -131,3 +105,30 @@ $( function() {
         return false;
     });
 } );
+
+
+
+//// Function SHOW MORE ////
+
+$(document).ready(function(){
+
+    var list = $("#gallery li");
+    var numToShow = 12;
+    var button = $("#next");
+    var numInList = list.length;
+    list.hide();
+    if (numInList > numToShow) {
+        button.show();
+    }
+    list.slice(0, numToShow).show();
+
+    button.click(function(){
+        var showing = list.filter(':visible').length;
+        list.slice(showing - 1, showing + numToShow).fadeIn();
+        var nowShowing = list.filter(':visible').length;
+        if (nowShowing >= numInList) {
+            button.hide();
+        }
+    });
+
+});

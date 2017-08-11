@@ -10,40 +10,45 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
 </head>
 <body>
 
 <div class="container">
+
     <div class="header">
         <h2>Pokemon Store</h2>
     </div>
+
     <div class="ui-widget ui-helper-clearfix">
 
-        <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
-            <li class="buy ui-widget-content ui-corner-tr">
-                <img src="http://pokeapi.co/media/img/1.png" alt="Pokemon" width="96" height="72">
-                <h5 class="ui-widget-header">Pokemon name</h5>
-                <a href="link/to/trash/script/when/we/have/js/off" class="ui-icon ui-icon-trash">Buy</a>
-            </li>
-            <li class="buy ui-widget-content ui-corner-tr">
-                <img src="http://pokeapi.co/media/img/2.png" alt="Pokemon" width="96" height="72">
-                <h5 class="ui-widget-header">Pokemon name</h5>
-                <a href="link/to/trash/script/when/we/have/js/off" class="ui-icon ui-icon-trash">Buy</a>
-            </li>
-            <li class="buy ui-widget-content ui-corner-tr">
-                <img src="http://pokeapi.co/media/img/3.png" alt="Pokemon" width="96" height="72">
-                <h5 class="ui-widget-header">Pokemon name</h5>
-                <a href="link/to/trash/script/when/we/have/js/off" class="ui-icon ui-icon-trash">Buy</a>
-            </li>
+        <script type="text/template" id="list-template">
+            <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+                <% for (var i=1; i<=count; i++) { %>
+                <li>
+                    <img src="http://pokeapi.co/media/img/<%=i%>.png" alt="Pokemon" width="96" height="72">
+                    <h5 class="ui-widget-header"><%=i%> Pokemon name</h5>
+                    <a href="link/to/trash/script/when/we/have/js/off" class="ui-icon ui-icon-trash">Buy</a>
+                </li>
+                <% } %>
+            </ul>
+        </script>
 
 
-        </ul>
+        <script>
+            var tmpl = _.template(document.getElementById('list-template').innerHTML);
+            var result = tmpl({count: 24});
+            document.write( result );
+        </script>
 
         <div id="trash" class="ui-widget-content ui-state-default">
             <h3 class="ui-widget-header">Basket</h3>
         </div>
 
     </div>
+    <button id="next">Load more...</button>
+
+
 </div>
 
 </body>
